@@ -1,4 +1,5 @@
 const lista = document.getElementById("lista")
+
 const botaoAdicionar = document.getElementById("adicionar")
 
 botaoAdicionar.addEventListener("click", () => {
