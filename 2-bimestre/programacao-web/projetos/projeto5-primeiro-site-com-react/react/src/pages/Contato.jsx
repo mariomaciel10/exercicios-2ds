@@ -1,8 +1,11 @@
-export default function Home() {
-    return(
-        <div>
-            <h2>Home</h2>
-            <p>Bem-vindo ao nosso site!</p>
-        </div>
-    )
+export default function Contato() {
+  return (
+    <div>
+      <h2>Contato</h2>
+      
+      <p>contato@site.com</p>
+
+      <p>85 88714415</p>
+    </div>
+  )
 }

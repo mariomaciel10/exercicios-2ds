@@ -8,6 +8,7 @@ export default function Sobre() {
                 quo commodi nemo accusantium eius, laborum esse. Soluta facere
                 accusantium, minima autem sunt ex quis!
             </p>
+            
             <p>Somos uma empresa focada em tecnologia.</p>
         </div>
     )
