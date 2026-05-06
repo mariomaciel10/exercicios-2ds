@@ -3,10 +3,9 @@ export default function Sobre() {
         <div>
             <h2>Sobre</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Explicabo temporibus sapiente sed, rerum asperiores veritatis
-                quo commodi nemo accusantium eius, laborum esse. Soluta facere
-                accusantium, minima autem sunt ex quis!
+     Welcome to Codespaces! You are on our default image. 
+   - It includes runtimes and tools for Python, Node.js, Docker,
+    and more. See the full list here: https://aka.ms/ghcs-default-image
             </p>
             
             <p>Somos uma empresa focada em tecnologia.</p>
