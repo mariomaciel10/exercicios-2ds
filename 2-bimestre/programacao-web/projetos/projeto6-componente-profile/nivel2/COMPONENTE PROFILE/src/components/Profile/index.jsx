@@ -1,35 +1,19 @@
-import { Calendar, BriefcaseBusiness } from 'lucide-react';
+import "../../styles/ProfileCSS.css"
+export default function Profile({nome, idade, profissao, foto}) {
+    return (
+        <> 
+        <div className="profile-card">
 
-export default function Profile({ nome, idade, profissao, foto }) {
-  return(
-    <>
-      <div className="container-pessoas">
-        <div className="pessoa-apresentacao">
-          <img src={foto} />
-          <h1>{nome}</h1>
-          <div className="linha"></div>
+        <img src={foto} className="foto"/>
+
+        <h1 className="nome">{nome}</h1>
+
+        <h1 className="idade">{idade}</h1>
+
+        <h1 className="profissao">{profissao}</h1>
+
+        <p className="colab">Colaborador/a</p>
         </div>
-
-        <div className="informacoes">
-          <p
-            style={{fontSize: "16px"}}
-          >
-            <Calendar
-              style={{color: "blue", marginRight: "10px"}}
-            />
-            <strong>Idade:</strong> {idade} anos
-          </p>
-
-          <p
-            style={{fontSize: "16px"}}
-          >
-            <BriefcaseBusiness 
-              style={{color: "blue", marginRight: "10px"}}
-            />
-            <strong>Profissão:</strong> {profissao}
-          </p>
-        </div>
-      </div>
-    </>
-  )
+        </>
+    )
 }
