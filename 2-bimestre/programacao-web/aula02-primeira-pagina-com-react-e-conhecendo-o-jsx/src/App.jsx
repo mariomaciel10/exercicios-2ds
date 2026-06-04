@@ -4,7 +4,7 @@ export default function App() {
 
   return(
     <div>
-      <h1>Oi meu nome é Eryck Fernando</h1>
+      <h1>Oi meu nome é Mario Pietro</h1>
 
       <p>Minha matéria favorita é: {favoritaMateria}</p>
 

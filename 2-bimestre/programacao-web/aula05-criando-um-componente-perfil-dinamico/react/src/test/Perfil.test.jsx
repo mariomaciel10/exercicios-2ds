@@ -12,7 +12,7 @@ describe("Perfil", () => {
 
   test("renderiza idade", () => {
     render(<Perfil />)
-    expect(screen.getByText(/idade/i)).toBeTruthy()
+    expect(screen.getByText(/idade: 16/i)).toBeTruthy()
   })
 
   test("renderiza profissão", () => {
@@ -22,7 +22,7 @@ describe("Perfil", () => {
 
   test("renderiza mensagem de idade", () => {
     render(<Perfil />)
-    expect(screen.getByText(/idade/i)).toBeTruthy()
+    expect(screen.getByText(/idade: 16/i)).toBeTruthy()
   })
 
 })
