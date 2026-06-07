@@ -113,3 +113,9 @@ Responda:
 3. O que precisa desenvolver?
 
 Crie sua resposta abaixo:
+
+1. Tenho mais interesse na área de Robótica, pois gosto de tecnologia, automação e da criação de máquinas e sistemas inteligentes.
+
+2. Tenho interesse em programação, gosto de aprender sobre tecnologia e tenho curiosidade para entender como os robôs funcionam.
+
+3. Preciso desenvolver mais conhecimentos em eletrônica, programação para robôs, montagem de circuitos e trabalho com sensores e componentes robóticos.

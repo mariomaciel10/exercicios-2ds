@@ -89,3 +89,6 @@ Problema:
 > 
 
 Como você criaria um MVP para resolver esse problema? Escreva abaixo.
+
+MVP Um aplicativo que permita ao aluno cadastrar suas tarefas e visualizar uma lista com os trabalhos que precisam ser feitos.
+Assim, os alunos já podem organizar suas atividades e testar se a solução ajuda a lembrar das tarefas.

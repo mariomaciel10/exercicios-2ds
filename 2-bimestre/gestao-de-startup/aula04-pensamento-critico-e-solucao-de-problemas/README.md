@@ -101,3 +101,11 @@ Perguntas:
 4. Como evitar novamente?
 
 Crie sua resposta abaixo:
+
+1. problema principal é a falta de organização e definição das tarefas do projeto.
+
+2. Isso aconteceu porque o grupo não planejou o trabalho e não dividiu as responsabilidades entre os integrantes.
+
+3. Fazer uma reunião rápida para dividir as tarefas, definir quem será responsável por cada parte e estabelecer prazos.
+
+4. Organizar o projeto desde o início, criar um plano de trabalho e distribuir as funções para cada integrante logo no começo.
