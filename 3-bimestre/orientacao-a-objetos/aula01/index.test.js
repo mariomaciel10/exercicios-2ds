@@ -1,4 +1,4 @@
-const filme = require("../index")
+const filme = require("./index")
 
 test("O objeto deve possuir o título correto", () => {
     expect(filme.titulo).toBe("Interestelar")

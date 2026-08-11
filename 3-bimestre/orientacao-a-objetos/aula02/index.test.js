@@ -1,4 +1,4 @@
-const funcionario = require("../index")
+const funcionario = require("./index")
 
 test("O nome deve ser João", () => {
     expect(funcionario.nome).toBe("João")

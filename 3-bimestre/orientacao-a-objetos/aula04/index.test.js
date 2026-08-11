@@ -1,4 +1,4 @@
-const livro = require("../index")
+const livro = require("./index")
 
 test("O título deve ser Dom Casmurro", () => {
     expect(livro.titulo).toBe("Dom Casmurro")
