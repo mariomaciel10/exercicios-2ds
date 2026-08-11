@@ -1,4 +1,4 @@
-const animais = require("../index")
+const animais = require("./index")
 
 test("Deve existir duas instâncias", () => {
     expect(animais.length).toBe(2)
