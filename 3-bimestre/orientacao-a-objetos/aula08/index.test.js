@@ -1,4 +1,4 @@
-const cofre = require("../index")
+const cofre = require("./index")
 
 test("O código correto deve retornar true", () => {
     expect(cofre.verificarCodigo("1234")).toBe(true)
