@@ -1,4 +1,4 @@
-const produto = require("../index")
+const produto = require("./index")
 
 test("O produto deve possuir o nome correto", () => {
     expect(produto.nome).toBe("Notebook")
