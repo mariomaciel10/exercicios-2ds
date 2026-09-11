@@ -1,25 +1,25 @@
 const Notificacao = require("./Notificacao")
 // CRIE SUA SOLUÇÃO ABAIXO ================
-
 class Factory {
 
-static criar(tipo, Notificacao) {
+    static criar(tipo, mensagem) {
 
-        if (tipo === "Email") {
-            return new Factory(Email)
+        if (tipo === "email") {
+            return new Notificacao.Email(mensagem)
         }
 
-        if (tipo === "SMS") {
-            return new Factory(SMS)
+        if (tipo === "sms") {
+            return new Notificacao.SMS(mensagem)
         }
 
-        if (tipo === "App") {
-            return new Factory(App)
+        if (tipo === "app") {
+            return new Notificacao.App(mensagem)
         }
 
-        throw new Error("Tipo de usuário inválido")
+        throw new Error("Tipo de notificação inválido")
     }
 }
+
 // === FIM DO CÓDIGO =======================
 // === NÃO FAZER NADA ABAIXO DESSA LINHA ===
 module.exports = Factory
