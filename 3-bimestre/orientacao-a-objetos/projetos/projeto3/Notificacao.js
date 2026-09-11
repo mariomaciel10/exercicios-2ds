@@ -12,8 +12,9 @@ class Notificacao{
 }
 
 class Email extends Notificacao {
+
 Notificacao (){
-    return "E-mail enviado: MENSAGEM"
+    return ` this.mensagem:  ${this.enviar}`
     }
 }    
 
