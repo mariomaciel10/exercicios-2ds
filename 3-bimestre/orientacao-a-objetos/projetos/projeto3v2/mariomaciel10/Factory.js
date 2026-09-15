@@ -1,21 +1,30 @@
-const Voucher = require("./Voucher")
+const ContratoTrabalho = require("./ContratoTrabalho")
+// CRIE SUA SOLUÇÃO ABAIXO ================
 
-function criar(tipo, cliente) {
-  if (tipo === "hospedagem") {
-    return new Voucher.Hospedagem(tipo, cliente)
-  }
+const Clt = ContratoTrabalho.Clt
+const Pj = ContratoTrabalho.Pj
+const Estagio = ContratoTrabalho.Estagio
 
-  if (tipo === "passeio") {
-    return new Voucher.Passeio(tipo, cliente)
-  }
+class Factory {
+  
+    static criar(tipo, funcionario) {
 
-  if (tipo === "transfer") {
-    return new Voucher.Transfer(tipo, cliente)
-  }
+            if (tipo === "clt") {
+                return new ContratoTrabalho.Clt(funcionario)
+            }
 
-  throw new Error("Tipo de voucher inválido")
-}
+            if (tipo === "pj") {
+                return new ContratoTrabalho.Pj(funcionario)
+            }
+            
+            if (tipo === "estagio") {
+                return new ContratoTrabalho.Estagio(funcionario)
+            }
 
-module.exports = {
-  criar
-}
+                throw new Error("Tipo de contrato inválido")
+        }
+    }
+
+// === FIM DO CÓDIGO =======================
+// === NÃO FAZER NADA ABAIXO DESSA LINHA ===
+module.exports = Factory
