@@ -3,7 +3,7 @@ function carregarConfig() {
         servico: process.env.SERVICO || "lavanderia",
         porta: Number(process.env.PORT) || 3000,
         ambiente: process.env.AMBIENTE || "desenvolvimento"
-    };
+    }
 }
 
-module.exports = { carregarConfig };
+module.exports = { carregarConfig }
