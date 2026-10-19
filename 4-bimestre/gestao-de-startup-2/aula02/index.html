@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funil AARRR</title>
+    <style>
+      :root {
+        --bg: #f4f8ff;
+        --card: #ffffff;
+        --primary: #2b6ef5;
+        --primary-dark: #184fc7;
+        --success: #20a86a;
+        --warning: #f0b429;
+        --danger: #df4f4f;
+        --text: #1e2432;
+        --muted: #5c6678;
+        --border: #dfe8f5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #edf5ff 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+
+      .header {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 8px 30px rgba(34, 70, 136, 0.08);
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #eaf1ff;
+        color: var(--primary-dark);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 14px 0 8px;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+      }
+
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 24px;
+        margin-top: 26px;
+      }
+
+      .card,
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 8px 30px rgba(34, 70, 136, 0.06);
+      }
+
+      .card h2,
+      .panel h2 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-size: 1.5rem;
+      }
+
+      .funil {
+        display: grid;
+        gap: 12px;
+      }
+
+      .etapa {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f8faff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px 16px;
+      }
+
+      .etapa strong {
+        font-size: 1rem;
+      }
+
+      .etapa .valor {
+        font-weight: 700;
+        font-size: 1.15rem;
+      }
+
+      .etapa .taxa {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-left: 10px;
+      }
+
+      .etapa.queda {
+        border-color: #f5c2c2;
+        background: #fff4f4;
+      }
+
+      .etapa.queda .valor,
+      .etapa.queda .taxa {
+        color: var(--danger);
+      }
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      button {
+        border: none;
+        border-radius: 12px;
+        padding: 12px 18px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .primary {
+        background: var(--primary);
+        color: white;
+      }
+
+      .secondary {
+        background: #ecf3ff;
+        color: var(--primary-dark);
+      }
+
+      .danger {
+        background: #ffe6e6;
+        color: #9f3030;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .metric {
+        background: #f8faff;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+      }
+
+      .metric strong {
+        font-size: 1.6rem;
+      }
+
+      .panel .resumo {
+        margin-top: 20px;
+        padding: 18px;
+        border-radius: 12px;
+        background: #f5f9ff;
+        border: 1px solid var(--border);
+        line-height: 1.6;
+      }
+
+      .resumo strong {
+        color: var(--danger);
+      }
+
+      .resumo .valor {
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      @media (max-width: 760px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <span class="tag">AARRR</span>
+        <h1>Funil de crescimento do BookSwap</h1>
+        <p class="subtitle">Uma plataforma para trocar livros entre alunos e descobrir a próxima leitura.</p>
+      </header>
+
+      <div class="layout">
+        <section class="card">
+          <h2>Funil AARRR</h2>
+
+          <div class="funil" id="funil"></div>
+
+          <div class="buttons">
+            <button class="primary" id="registrarAquisicao">Registrar aquisição</button>
+            <button class="secondary" id="registrarAtivacao">Registrar ativação</button>
+            <button class="secondary" id="registrarRetencao">Registrar retenção</button>
+            <button class="secondary" id="registrarReceita">Registrar receita</button>
+            <button class="secondary" id="registrarRecomendacao">Registrar recomendação</button>
+            <button class="danger" id="limparDados">Limpar dados</button>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <h2>Resumo</h2>
+          <div class="stats">
+            <div class="metric">
+              <span>Maior queda</span>
+              <strong id="maiorQuedaNome">-</strong>
+            </div>
+            <div class="metric">
+              <span>Queda %</span>
+              <strong id="maiorQuedaPercent">0%</strong>
+            </div>
+          </div>
+
+          <div class="resumo" id="resumo">
+            <strong>Etapa crítica:</strong> nenhum dado registrado ainda.
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = 'aarrr-funil-bookswap';
+
+      const etapas = [
+        { key: 'aquisicao', nome: 'Aquisição', frase: 'abrir a página' },
+        { key: 'ativacao', nome: 'Ativação', frase: 'clicar em Experimentar' },
+        { key: 'retencao', nome: 'Retenção', frase: 'clicar em Quero usar de novo' },
+        { key: 'receita', nome: 'Receita', frase: 'clicar em Eu pagaria por isso' },
+        { key: 'recomendacao', nome: 'Recomendação', frase: 'dar nota 9 ou 10 no NPS' }
+      ];
+
+      const funilEl = document.getElementById('funil');
+      const resumoEl = document.getElementById('resumo');
+      const maiorQuedaNomeEl = document.getElementById('maiorQuedaNome');
+      const maiorQuedaPercentEl = document.getElementById('maiorQuedaPercent');
+
+      function getDados() {
+        try {
+          const dados = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+          const base = {};
+          for (const etapa of etapas) {
+            base[etapa.key] = Number(dados[etapa.key] || 0);
+          }
+          return base;
+        } catch (error) {
+          return Object.fromEntries(etapas.map((etapa) => [etapa.key, 0]));
+        }
+      }
+
+      function salvarDados(dados) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+      }
+
+      function obterTaxaAtual(corrente, anterior) {
+        if (!anterior || anterior === 0) return '0%';
+        return `${Math.round((corrente / anterior) * 100)}%`;
+      }
+
+      function calcularMaiorQueda(dados) {
+        const valores = etapas.map((etapa, index) => {
+          if (index === 0) return { etapa, valor: dados[etapa.key], queda: 0 };
+          const anterior = dados[etapas[index - 1].key] || 1;
+          const atual = dados[etapa.key] || 0;
+          const quedaPercent = anterior === 0 ? 0 : ((anterior - atual) / anterior) * 100;
+          return { etapa, valor: atual, queda: quedaPercent };
+        });
+
+        return valores.slice(1).reduce((maior, item) => {
+          return item.queda > maior.queda ? item : maior;
+        }, { etapa: etapas[0], queda: 0, valor: 0 });
+      }
+
+      function renderizar() {
+        const dados = getDados();
+        const maiorQueda = calcularMaiorQueda(dados);
+
+        funilEl.innerHTML = '';
+
+        etapas.forEach((etapa, index) => {
+          const valor = dados[etapa.key];
+          const anterior = index === 0 ? null : dados[etapas[index - 1].key];
+          const taxa = index === 0 ? 'base' : `conversão: ${obterTaxaAtual(valor, anterior)}`;
+          const caiu = maiorQueda.etapa.key === etapa.key;
+
+          const item = document.createElement('div');
+          item.className = `etapa ${caiu ? 'queda' : ''}`;
+          item.innerHTML = `
+            <div>
+              <strong>${etapa.nome}</strong>
+              <div class="taxa">${taxa}</div>
+            </div>
+            <div class="valor">${valor}</div>
+          `;
+          funilEl.appendChild(item);
+        });
+
+        if (maiorQueda.etapa) {
+          maiorQuedaNomeEl.textContent = maiorQueda.etapa.nome;
+          maiorQuedaPercentEl.textContent = `${Math.round(maiorQueda.queda)}%`;
+          resumoEl.innerHTML = `
+            <strong>Etapa crítica:</strong> ${maiorQueda.etapa.nome} caiu mais, com <span class="valor">${Math.round(maiorQueda.queda)}%</span> de perda.<br>
+            <strong>O que isso mostra:</strong> a maior queda está em <span class="valor">${maiorQueda.etapa.frase}</span>.
+          `;
+        } else {
+          maiorQuedaNomeEl.textContent = '-';
+          maiorQuedaPercentEl.textContent = '0%';
+          resumoEl.innerHTML = '<strong>Etapa crítica:</strong> nenhum dado registrado ainda.';
+        }
+      }
+
+      function atualizarEtapa(key) {
+        const dados = getDados();
+        dados[key] += 1;
+        salvarDados(dados);
+        renderizar();
+      }
+
+      document.getElementById('registrarAquisicao').addEventListener('click', () => atualizarEtapa('aquisicao'));
+      document.getElementById('registrarAtivacao').addEventListener('click', () => atualizarEtapa('ativacao'));
+      document.getElementById('registrarRetencao').addEventListener('click', () => atualizarEtapa('retencao'));
+      document.getElementById('registrarReceita').addEventListener('click', () => atualizarEtapa('receita'));
+      document.getElementById('registrarRecomendacao').addEventListener('click', () => atualizarEtapa('recomendacao'));
+
+      document.getElementById('limparDados').addEventListener('click', () => {
+        localStorage.removeItem(STORAGE_KEY);
+        renderizar();
+      });
+
+      renderizar();
+    </script>
+  </body>
+</html>
