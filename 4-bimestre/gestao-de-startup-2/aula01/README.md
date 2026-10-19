@@ -236,3 +236,7 @@ Deixe a página aberta no seu computador. Visite os colegas ao lado e dê nota n
 
 - Quantas respostas e qual o NPS?
 - Complete: *"Se este NPS cair, eu vou ______."*
+
+### Página prática
+
+Abra a página interativa da atividade em [index.html](index.html). Ela calcula o NPS, salva as respostas no localStorage e inclui o exemplo da aula com resultado final de 35 pontos.
