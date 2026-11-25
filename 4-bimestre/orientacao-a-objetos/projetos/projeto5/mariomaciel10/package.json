@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "jest"
+  "scripts": { 
+    "start": "node servidor.js",
+    "test": "jest",
+    "dev": "node --watch --env-file=.env servidor.js"
   },
   "keywords": [],
   "author": "",
