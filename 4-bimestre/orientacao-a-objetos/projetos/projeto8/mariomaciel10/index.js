@@ -19,7 +19,7 @@ async function executar() {
     
     const atualizada = await repositorio.atualizar(1, {
         situacao: "pronta"
-    });
+    })
 
     console.log("Atualizada:", atualizada)
 
