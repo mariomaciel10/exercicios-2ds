@@ -32,7 +32,7 @@ async function salvar(lavagem) {
     return lavagem
 }
 
-// Atualiza uma lavagem existente
+
 async function atualizar(id, dados) {
     const lista = await listar()
 
@@ -58,7 +58,7 @@ async function atualizar(id, dados) {
     return lista[indice]
 }
 
-// Remove uma lavagem
+
 async function remover(id) {
     const lista = await listar()
 
@@ -79,7 +79,7 @@ async function remover(id) {
     return true
 }
 
-// Exporta as funções
+
 module.exports = {
     listar,
     salvar,
